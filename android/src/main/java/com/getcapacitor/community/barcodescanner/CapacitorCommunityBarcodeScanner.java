@@ -299,6 +299,10 @@ public class CapacitorCommunityBarcodeScanner extends Plugin implements ImageAna
         @SuppressLint("UnsafeOptInUsageError")
         Image mediaImage = image.getImage();
 
+        if (mediaImage == null || mScanner == null) {
+            return;
+        }
+
         if (mediaImage != null) {
             InputImage inputImage = InputImage.fromMediaImage(mediaImage, image.getImageInfo().getRotationDegrees());
 
